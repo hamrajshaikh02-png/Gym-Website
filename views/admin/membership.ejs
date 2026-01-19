@@ -1,0 +1,133 @@
+<%- include('navbar') %>
+  <h2 class="bg-success p-2 rounded fw-bold text-dark">Membership Plans</h2>
+
+  <div class="container mt-3">
+
+    <!-- Toggle Button -->
+    <button class="btn btn-primary float-end mb-3" data-bs-toggle="collapse" data-bs-target="#membershipForm">
+      <i class="fas fa-plus-circle me-2"></i> Add Plans
+    </button>
+
+    <!-- Dropdown / Collapse Form -->
+    <div class="collapse" id="membershipForm">
+      <div class="card shadow p-4">
+
+        <h4 class="mb-4">Add Membership Plan</h4>
+
+        <form action="/admin/save-membership" method="post">
+
+          <div class="mb-3">
+            <label class="form-label">Plan Name</label>
+            <select name="plan_name" class="form-control" required>
+              <option value="">Select Plan</option>
+              <option value="Monthly">Monthly</option>
+              <option value="Yearly">Yearly</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Trainer Type</label>
+            <select name="trainer_type" class="form-control" required>
+              <option value="">Select Trainer Type</option>
+              <option value="Without Trainer">Without Trainer</option>
+              <option value="With Trainer">With Trainer</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Price (₹)</label>
+            <input type="number" name="price" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Features (comma separated)</label>
+            <textarea name="features" class="form-control" rows="4"
+              placeholder="Full Gym Access, Cardio, Locker Facility"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Button Text</label>
+            <input type="text" name="button_text" class="form-control" value="Join Now">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Button URL</label>
+            <input type="text" name="button_url" class="form-control" value="/register">
+          </div>
+
+          <button class="btn btn-success w-100">Save Plan</button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+
+      <!-- <h2 class="fw-bold mb-5">Membership Plans</h2> -->
+
+      <div class="row g-4 justify-content-center mt-3">
+
+        <% data.forEach(function(p){ %>
+
+          <div class="col-md-3">
+            <div class="card shadow-lg border-0 rounded-4 h-100 p-4">
+
+              <h5 class="fw-bold text-black">
+                <%= p.plan_name %>
+              </h5>
+
+              <% if(p.trainer_type=='With Trainer' ){ %>
+                <span class="badge bg-warning text-dark mb-2">
+                  <%= p.trainer_type %>
+                </span>
+                <% } else { %>
+                  <span class="badge bg-secondary mb-2">
+                    <%= p.trainer_type %>
+                  </span>
+                  <% } %>
+
+                    <h2 class="my-3">₹<%= p.price %>
+                    </h2>
+
+                    <ul class="list-unstyled text-start mt-3">
+                      <% let features=p.features.split(','); %>
+                        <% features.forEach(function(f){ %>
+                          <li>
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <%= f %>
+                          </li>
+                          <% }) %>
+                    </ul>
+
+                    <a href="<%= p.button_url %>" class="btn btn-primary w-100 mt-3">
+                      <%= p.button_text %>
+                    </a>
+
+                    <div class="d-flex gap-2 mt-3">
+                      <a href="/admin/edit-membership/<%= p.id %>" class="btn btn-sm btn-warning w-50">
+                        <i class="fas fa-edit"></i> Edit
+                      </a>
+
+                      <a href="/admin/delete-membership/<%= p.id %>" class="btn btn-sm btn-danger w-50"
+                        onclick="return confirm('Are you sure?')">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+
+            </div>
+          </div>
+
+          <% }) %>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <%- include('footer') %>

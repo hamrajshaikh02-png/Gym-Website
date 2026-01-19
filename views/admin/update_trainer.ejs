@@ -1,0 +1,30 @@
+<%- include('navbar') %>
+
+<div class="container my-5">
+  <h3 class="mb-4">Update Trainer</h3>
+
+  <form method="POST" action="/admin/update_trainer_profile" class="card p-4 shadow rounded-4" enctype="multipart/form-data">
+
+    <input type="hidden" name="id" value="<%= data[0].id %>">
+
+    <label>Name</label>
+    <input type="text" name="name" value="<%= data[0].name %>" class="form-control mb-3" required>
+
+    <label>Specialization</label>
+    <input type="text" name="specialization" value="<%= data[0].specialization %>" class="form-control mb-3" required>
+
+    <label>Experience</label>
+    <input type="text" name="experience" value="<%= data[0].experience %>" class="form-control mb-3" required>
+
+    <label>Training Type</label>
+    <input type="text" name="training_type" value="<%= data[0].training_type %>" class="form-control mb-3" required>
+
+    <label>Photo</label>
+    <input type="file" accept="image/*" name="photo" value="<%= data[0].photo %>" class="form-control mb-3">
+
+    <button class="btn btn-danger w-100">Update Trainer</button>
+  </form>
+</div>
+
+
+<%- include('footer') %>

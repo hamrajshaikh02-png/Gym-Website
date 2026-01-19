@@ -1,0 +1,344 @@
+
+:root{
+  --nav-height: 75px;
+}
+
+body{
+  margin:0;
+  padding:0;
+}
+
+/* ================= NAVBAR ================= */
+
+/* NAVBAR BASE */
+.navbar {
+  background: #0B1B3F;   /* Navy Blue */
+  padding: 14px 0;
+  box-shadow: 0 4px 25px rgba(30, 94, 255, 0.25);
+  transition: 0.3s;
+}
+
+/* Brand */
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Nav Links */
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+}
+
+/* Hover Effect */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #1E5EFF;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar .nav-link:hover {
+  color: #1E5EFF !important;
+}
+
+/* Join Now Button */
+.join-btn {
+  background: #1E5EFF;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.join-btn:hover {
+  background: #1746C4;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Mobile Toggle */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+
+/* ================= HERO ================= */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(rgba(11,27,63,0.75), rgba(11,27,63,0.85)),
+  url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:991px){
+  .navbar-collapse{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    margin-top:10px;
+  }
+
+  .join-btn{
+    width:100%;
+    margin-top:15px;
+  }
+}
+/* ================= FOOTER ================= */
+/* FOOTER */
+footer {
+  background: #0B1B3F;   /* Navy Blue */
+  color: #ffffff;
+}
+
+/* Footer Headings */
+footer h4,
+footer h5 {
+  color: #ffffff;
+}
+
+/* Footer Paragraphs */
+footer p {
+  color: #cdd7ff;
+  line-height: 1.7;
+}
+
+/* Footer Links */
+.footer-link {
+  color: #cdd7ff;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.footer-link::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #1E5EFF;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.footer-link:hover {
+  color: #1E5EFF;
+}
+
+/* Footer Divider */
+footer hr {
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Copyright */
+footer .text-center p {
+  color: #aab4ff;
+  font-size: 14px;
+}
+
+/* Brand Name */
+footer .navbar-brand {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+/* Why choose section */
+.card {
+  transition: all 0.4s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon animation */
+.card:hover div {
+  transform: scale(1.2);
+  transition: 0.4s;
+}
+.why-gym .col-md-4 {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Section title */
+.gym-card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.gym-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(30,94,255,0.25);
+}
+
+.gym-card img{
+  height:250px;
+  width:100%;
+  object-fit:cover;
+}
+
+.gym-card-body{
+  padding:25px;
+  text-align:center;
+}
+
+.gym-card-body h5{
+  font-weight:700;
+}
+
+.gym-card-body p{
+  color:#666;
+}
+
+
+
+
+/* ================= ABOUT US ================= */
+/*About Mission & Vision */
+
+/* Section background */
+.bg-light{
+  background: linear-gradient(120deg, #f4f7ff, #ffffff);
+}
+
+/* Cards */
+.card{
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top glow line */
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:6px;
+  background:#1E5EFF;
+}
+
+/* Hover animation */
+.card:hover{
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 70px rgba(30,94,255,0.25);
+}
+
+/* Icon glow */
+.card .fs-1{
+  transition: 0.4s;
+}
+
+.card:hover .fs-1{
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* Headings */
+.card h3{
+  font-weight: 800;
+}
+
+/* Paragraph */
+.card p{
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ================= CONTACT PAGE ================= */
+/* Contact Cards */
+.contact-card{
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.contact-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(30,94,255,0.18);
+}
+
+/* Form Inputs */
+.contact-card .form-control{
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.contact-card .form-control:focus{
+  border-color:#1E5EFF;
+  box-shadow:0 0 0 0.15rem rgba(30,94,255,.25);
+}
+
+/* Buttons */
+.contact-card .btn-primary{
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* Icon box */
+.icon-box{
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #1E5EFF, #3f7cff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+/* Map rounded */
+.contact-card iframe{
+  border-radius: 16px;
+  border: none;
+}

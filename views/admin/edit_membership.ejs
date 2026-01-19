@@ -1,0 +1,48 @@
+<%- include('navbar') %>
+
+<div class="container">
+  <h3 class="bg-success text-dark fw-bold">Edit Membership Plan</h3>
+
+  <form action="/admin/update-membership/<%= p.id %>" method="post" class="card p-4">
+
+    <div class="mb-3">
+      <label>Plan Name</label>
+      <select name="plan_name" class="form-control">
+        <option <%= p.plan_name=='Monthly'?'selected':'' %>>Monthly</option>
+        <option <%= p.plan_name=='Yearly'?'selected':'' %>>Yearly</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Trainer Type</label>
+      <select name="trainer_type" class="form-control">
+        <option <%= p.trainer_type=='Without Trainer'?'selected':'' %>>Without Trainer</option>
+        <option <%= p.trainer_type=='With Trainer'?'selected':'' %>>With Trainer</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Price</label>
+      <input type="number" name="price" value="<%= p.price %>" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Features</label>
+      <textarea name="features" class="form-control"><%= p.features %></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Button Text</label>
+      <input type="text" name="button_text" value="<%= p.button_text %>" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Button URL</label>
+      <input type="text" name="button_url" value="<%= p.button_url %>" class="form-control">
+    </div>
+
+    <button class="btn btn-success w-100">Update Plan</button>
+  </form>
+</div>
+
+<%- include('footer') %>

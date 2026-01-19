@@ -1,0 +1,45 @@
+<!-- <%- include('navbar') %>
+
+<div class="container mt-4">
+  <h3 class="fw-bold mb-4">Trainer Booking Requests</h3>
+
+  <div class="card shadow">
+    <div class="card-body">
+
+      <table class="table table-bordered text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>User Name</th>
+            <th>Mobile</th>
+            <th>Category</th>
+            <th>Trainer</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% if(data.length > 0){ %>
+            <% for(var i=0;i<data.length;i++){ %>
+              <tr>
+                <td><%= i+1 %></td>
+                <td><%= data[i].user_name %></td>
+                <td><%= data[i].mobile %></td>
+                <td><%= data[i].category %></td>
+                <td><%= data[i].trainer_name %></td>
+                <td><%= data[i].created_at %></td>
+              </tr>
+            <% } %>
+          <% } else { %>
+            <tr>
+              <td colspan="6" class="text-center text-muted">No Bookings Found</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %> -->

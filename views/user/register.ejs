@@ -1,0 +1,64 @@
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 bg-transparent">
+
+      <div class="modal-body">
+
+        <div class="register-card bg-white p-4 rounded-4 shadow">
+
+          <h3 class="text-center text-primary fw-bold mb-4">
+            <i class="fas fa-user-plus"></i> Registration
+          </h3>
+
+          <form action="/save_user" method="POST">
+
+            <!-- Name -->
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Mobile -->
+            <div class="mb-3">
+              <label class="form-label">Mobile Number</label>
+              <input type="text" name="mobile" class="form-control form-control-lg" placeholder="Enter phone number" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" name="password" class="form-control form-control-lg" placeholder="Create password" required>
+            </div>
+
+            <!-- Membership -->
+            <div class="mb-4">
+              <label class="form-label">Membership Type</label>
+              <select name="membership" class="form-select form-select-lg" required>
+                <option value="">Select Plan</option>
+                <option>Monthly</option>
+                <option>Yearly</option>
+              </select>
+            </div>
+
+            <!-- Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">
+                <i class="fas fa-user-plus"></i> Register Now
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

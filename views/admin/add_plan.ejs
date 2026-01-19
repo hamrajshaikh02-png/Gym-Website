@@ -1,0 +1,73 @@
+<%- include('navbar') %>
+
+<div class="container mt-5">
+  <h3 class="mb-4">Add New Membership Plan</h3>
+
+  <form method="POST" action="/admin/add-plan">
+
+    <!-- Plan Name -->
+    <div class="mb-3">
+      <label>Plan Name</label>
+      <select name="plan_name" class="form-select">
+        <option value="Monthly">Monthly</option>
+        <option value="Yearly">Yearly</option>
+      </select>
+    </div>
+
+    <!-- Trainer Type -->
+    <div class="mb-3">
+      <label>Trainer Type</label>
+      <select name="trainer_type" class="form-select">
+        <option value="With Trainer">With Trainer</option>
+        <option value="Without Trainer">Without Trainer</option>
+      </select>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-3">
+      <label>Price</label>
+      <input type="text" name="price" class="form-control">
+    </div>
+
+    <!-- Features -->
+    <div class="mb-3">
+      <label>Full Gym Access</label>
+      <input type="text" name="full_gym_access" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Cardio Access</label>
+      <input type="text" name="cardio_access" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Strength Training</label>
+      <input type="text" name="strength_training" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Locker Facility</label>
+      <input type="text" name="locker_facility" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Free Fitness Check</label>
+      <input type="text" name="free_fitness_check" class="form-control">
+    </div>
+
+    <!-- Button -->
+    <div class="mb-3">
+      <label>Button Text</label>
+      <input type="text" name="button_text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Button URL</label>
+      <input type="text" name="button_url" class="form-control">
+    </div>
+
+    <button class="btn btn-success w-100">Add Plan</button>
+  </form>
+</div>
+
+<%- include('footer') %>

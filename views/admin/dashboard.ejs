@@ -1,0 +1,67 @@
+<%- include('navbar') %>
+
+    <div class="container mt-4">
+        <h3 class="fw-bold mb-4 text-black bg-danger">Admin Dashboard</h3>
+
+        <div class="row g-4">
+
+            <!-- Enquiries -->
+            <div class="col-md-3">
+                <div class="card shadow text-center p-4 bg-primary text-dark rounded-4">
+                    <i class="fa fa-envelope fs-1 mb-2"></i>
+                    <h5>Total Enquiries</h5>
+                    <h2>
+                        <%= enquiry %>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Members -->
+            <div class="col-md-3">
+                <div class="card shadow text-center p-4 bg-success text-dark rounded-4">
+                    <i class="fa fa-users fs-1 mb-2"></i>
+                    <h5>Registered Members</h5>
+                    <h2>
+                        <%= users %>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Trainers -->
+            <div class="col-md-3">
+                <div class="card shadow text-center p-4 bg-warning text-dark rounded-4">
+                    <i class="fa fa-dumbbell fs-1 mb-2"></i>
+                    <h5>Total Trainers</h5>
+                    <h2>
+                        <%= trainers %>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Membership Plans -->
+            <div class="col-md-3">
+                <div class="card shadow text-center p-4 bg-info text-dark rounded-4">
+                    <i class="fa fa-id-card fs-1 mb-2"></i>
+                    <h5>Membership Plans</h5>
+                    <h2>
+                        <%= plans %>
+                    </h2>
+                </div>
+            </div>
+
+
+            <!-- Gallery Images -->
+              <div class="col-md-3">
+                <div class="card shadow text-center p-4 bg-secondary text-dark rounded-4">
+                    <i class="fa fa-calendar-check fs-1 mb-2"></i>
+                    <h5>Gallery Images</h5>
+                    <h2>
+                        <%= gallery %>
+                    </h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('footer') %>
