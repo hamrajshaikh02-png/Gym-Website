@@ -23,6 +23,6 @@ var userRoutes = require("./routes/user");
 app.use("/admin", adminRoutes);
 app.use("/", userRoutes);
 
-app.listen(1000, ()=>{
+app.listen(process.env.PORT || 1000, ()=>{
     console.log("Server running on port 1000");
 });
