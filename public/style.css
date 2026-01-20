@@ -91,7 +91,7 @@ body{
 
 @media(max-width:991px){
   .navbar-collapse{
-    background:white;
+    background:#0B1B3F;
     padding:15px;
     border-radius:15px;
     margin-top:10px;

@@ -364,6 +364,18 @@ router.post("/update_gym_info", async (req, res) => {
 });
 // Admin contact page form END......................................................................................
 
+// Admin LOGOUT
+router.get("/logout", function (req, res) {
+  req.session.destroy(function (err) {
+    if (err) {
+      console.log(err);
+      return res.send("Logout Error");
+    }
+
+    res.clearCookie("connect.sid"); // default session cookie
+    res.redirect("/admin/login");
+  });
+});
 
 
 module.exports = router;

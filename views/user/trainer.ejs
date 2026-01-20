@@ -5,89 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitNFine</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="/style.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
+
 <!-- NAVBAR -->
 <%- include('navbar') %>
 
+<!-- PAGE HEADER -->
 <section class="py-5 mt-5 bg-dark text-white text-center">
   <div class="container">
-    <h1 class="fw-bold">Fit<span class="text-danger">N</span>Fine Trainers</h1>
-    <p>Certified Strength & Weight Loss Coach</p>
+    <h1 class="fw-bold">
+      Fit<span class="text-danger">N</span>Fine Trainers
+    </h1>
+    <p class="mb-0">Certified Strength & Weight Loss Coach</p>
   </div>
 </section>
+
+<!-- TRAINERS LIST -->
 <section class="py-4 bg-light">
   <div class="container text-center">
 
-    <h2 class="fw-bold mb-4 mb-5">Meet Our Trainers</h2>
+    <h2 class="fw-bold mb-5">Meet Our Trainers</h2>
 
- <div class="row g-4">
+    <div class="row g-4 justify-content-center">
 
-    <% data.forEach(function(t){ %>
+      <% data.forEach(function(t){ %>
 
-    <div class="col-md-4">
-      <div class="card shadow rounded-4 text-center overflow-hidden">
+      <div class="col-sm-6 col-md-4">
+        <div class="card shadow rounded-4 text-center overflow-hidden h-100">
 
-        <img src="/images/<%= t.photo %>" class="img-fluid">
+          <img src="/images/<%= t.photo %>" class="img-fluid w-100">
 
-        <div class="p-3">
-          <h5 class="fw-bold"><%= t.name %></h5>
+          <div class="p-3">
+            <h5 class="fw-bold"><%= t.name %></h5>
 
-          <span class="badge bg-danger mb-2">
-            <%= t.specialization %>
-          </span>
+            <span class="badge bg-danger mb-2">
+              <%= t.specialization %>
+            </span>
 
-          <p><b>Exp:</b> <%= t.experience %></p>
-          <p><b>Trains:</b> <%= t.training_type %></p>
-
+            <p class="mb-1"><b>Exp:</b> <%= t.experience %></p>
+            <p class="mb-0"><b>Trains:</b> <%= t.training_type %></p>
+          </div>
 
         </div>
-
       </div>
+
+      <% }) %>
+
     </div>
-
-    <% }) %>
-
-  </div>
-    
   </div>
 </section>
 
-
-
-
-<!-- Reviews Section -->
+<!-- REVIEWS SECTION -->
 <section class="py-5 bg-light">
   <div class="container text-center">
     <h2 class="fw-bold mb-4">Trainer Reviews</h2>
 
-    <div class="row g-4">
+    <div class="row g-4 justify-content-center">
 
-      <div class="col-md-4">
-        <div class="card shadow border-0 p-4 rounded-4">
+      <div class="col-sm-6 col-md-4">
+        <div class="card shadow border-0 p-4 rounded-4 h-100">
           <h5>Rohit Patil</h5>
-          <p class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-          <p class="text-muted">Rahul helped me lose 10kg in 2 months!</p>
+          <p class="text-warning mb-2">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </p>
+          <p class="text-muted mb-0">Rahul helped me lose 10kg in 2 months!</p>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card shadow border-0 p-4 rounded-4">
+      <div class="col-sm-6 col-md-4">
+        <div class="card shadow border-0 p-4 rounded-4 h-100">
           <h5>Pooja Sharma</h5>
-          <p class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-          <p class="text-muted">Neha’s yoga sessions changed my life.</p>
+          <p class="text-warning mb-2">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </p>
+          <p class="text-muted mb-0">Neha’s yoga sessions changed my life.</p>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card shadow border-0 p-4 rounded-4">
+      <div class="col-sm-6 col-md-4">
+        <div class="card shadow border-0 p-4 rounded-4 h-100">
           <h5>Aman Verma</h5>
-          <p class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-          <p class="text-muted">Amit is the best personal trainer ever!</p>
+          <p class="text-warning mb-2">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </p>
+          <p class="text-muted mb-0">Amit is the best personal trainer ever!</p>
         </div>
       </div>
 
@@ -95,18 +104,24 @@
   </div>
 </section>
 
-<!-- Book Your Trainer Section -->
+<!-- BOOK TRAINER -->
 <section class="py-5 bg-light">
   <div class="container text-center">
     <h2 class="fw-bold mb-4">Book Your Trainer</h2>
 
     <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form action="/book_trainer" method="POST" class="card shadow-lg border-0 rounded-4 p-4">
+      <div class="col-sm-12 col-md-6 col-lg-5">
 
-          <input type="text" name="user_name" class="form-control mb-3" placeholder="Your Name" required>
+        <form action="/book_trainer" method="POST"
+              class="card shadow-lg border-0 rounded-4 p-4">
 
-          <input type="text" name="mobile" class="form-control mb-3" placeholder="Mobile" required>
+          <input type="text" name="user_name"
+                 class="form-control mb-3"
+                 placeholder="Your Name" required>
+
+          <input type="text" name="mobile"
+                 class="form-control mb-3"
+                 placeholder="Mobile" required>
 
           <select name="category" class="form-control mb-3" required>
             <option value="">Select Category</option>
@@ -124,17 +139,19 @@
           </select>
 
           <button class="btn btn-primary w-100">
-            Book Now 
+            Book Now
           </button>
 
         </form>
+
       </div>
     </div>
   </div>
 </section>
 
-
 <!-- FOOTER -->
 <%- include('footer') %>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

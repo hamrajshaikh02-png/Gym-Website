@@ -44,9 +44,12 @@ body{ background:#f4f6f9; }
 
 <%- include("navbar") %>
 
+<!-- PAGE HEADER -->
 <section class="py-5 mt-5 bg-dark text-white text-center">
   <div class="container">
-    <h1 class="fw-bold">Fit<span class="text-danger">N</span>Fine Gallery</h1>
+    <h1 class="fw-bold">
+      Fit<span class="text-danger">N</span>Fine Gallery
+    </h1>
     <p>See our workouts, trainers and amazing fitness transformations</p>
   </div>
 </section>
@@ -58,65 +61,88 @@ function renderSection(section){
 
   while(i<imgs.length){
     let remain = imgs.length - i;
-    let row=[], col="col-md-3";
+    let row=[], col="col-12 col-sm-6 col-md-3";
 
     if(remain>=9 || remain==6 || remain==5 || remain==3){
-      row = imgs.slice(i,i+3); col="col-md-4"; i+=3;
+      row = imgs.slice(i,i+3);
+      col="col-12 col-sm-6 col-md-4";
+      i+=3;
     }
     else if(remain==8 || remain==7 || remain==4){
-      row = imgs.slice(i,i+4); col="col-md-3"; i+=4;
+      row = imgs.slice(i,i+4);
+      col="col-12 col-sm-6 col-md-3";
+      i+=4;
     }
     else if(remain==2){
-      row = imgs.slice(i,i+2); col="col-md-6"; i+=2;
+      row = imgs.slice(i,i+2);
+      col="col-12 col-sm-6 col-md-6";
+      i+=2;
     }
     else{
-      row = imgs.slice(i,i+1); col="col-md-6 mx-auto"; i+=1;
+      row = imgs.slice(i,i+1);
+      col="col-12 col-md-6 mx-auto";
+      i+=1;
     }
 %>
 
-<div class="row justify-content-center mb-3">
+<div class="row justify-content-center mb-3 g-3">
   <% row.forEach(img=>{ %>
-    <div class="<%= col %> p-2">
-      <img src="/images/<%= img.image %>" loading="lazy" class="gallery-img">
+    <div class="<%= col %>">
+      <img src="/images/<%= img.image %>"
+           loading="lazy"
+           class="gallery-img img-fluid">
     </div>
   <% }) %>
 </div>
 
 <% }} %>
 
+<!-- WORKOUT ZONE -->
 <section class="section-box">
-<div class="container">
-<h2 class="section-title">Workout Zone</h2>
-<p class="section-desc">High intensity cardio, strength training and group workouts to push your limits.</p>
-<% renderSection("workout"); %>
-</div>
+  <div class="container">
+    <h2 class="section-title">Workout Zone</h2>
+    <p class="section-desc">
+      High intensity cardio, strength training and group workouts to push your limits.
+    </p>
+    <% renderSection("workout"); %>
+  </div>
 </section>
 
+<!-- CARDIO ZONE -->
 <section class="section-box">
-<div class="container">
-<h2 class="section-title">Cardio Zone</h2>
-<p class="section-desc">Boost endurance, burn calories and improve heart health with high-energy cardio workouts and modern equipment.</p>
-<% renderSection("cardio"); %>
-</div>
+  <div class="container">
+    <h2 class="section-title">Cardio Zone</h2>
+    <p class="section-desc">
+      Boost endurance, burn calories and improve heart health with high-energy cardio workouts and modern equipment.
+    </p>
+    <% renderSection("cardio"); %>
+  </div>
 </section>
 
+<!-- STRENGTH ZONE -->
 <section class="section-box">
-<div class="container">
-<h2 class="section-title">Strength Zone</h2>
-<p class="section-desc">Build muscle, increase power and transform your body with advanced weight training and strength-focused workouts.</p>
-<% renderSection("strength"); %>
-</div>
+  <div class="container">
+    <h2 class="section-title">Strength Zone</h2>
+    <p class="section-desc">
+      Build muscle, increase power and transform your body with advanced weight training and strength-focused workouts.
+    </p>
+    <% renderSection("strength"); %>
+  </div>
 </section>
 
+<!-- YOGA ZONE -->
 <section class="section-box">
-<div class="container">
-<h2 class="section-title">Yoga Zone</h2>
-<p class="section-desc">Improve flexibility, balance and inner peace with guided yoga sessions designed for relaxation, strength and mindfulness.</p>
-<% renderSection("yoga"); %>
-</div>
+  <div class="container">
+    <h2 class="section-title">Yoga Zone</h2>
+    <p class="section-desc">
+      Improve flexibility, balance and inner peace with guided yoga sessions designed for relaxation, strength and mindfulness.
+    </p>
+    <% renderSection("yoga"); %>
+  </div>
 </section>
 
 <%- include("footer") %>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
