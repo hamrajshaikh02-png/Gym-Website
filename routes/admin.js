@@ -77,7 +77,7 @@ router.get("/dashboard", isLogginIn, async function (req, res) {
 
 // dashboard END..............................................................................................
 // Home About section START.....................................................................................
-router.get("/home", async function async(req, res) {
+router.get("/home", isLogginIn, async function async(req, res) {
   let data = await exe("SELECT * FROM home_about LIMIT 1");
 
   res.render("admin/home.ejs", { about: data[0] });
