@@ -122,12 +122,12 @@ router.post("/update_home_about", async (req, res) => {
 
 
 // About Page section START..................................................................................
-router.get("/about", function (req, res) {
-  res.render("admin/about.ejs")
-});
+// router.get("/about", isLogginIn, function (req, res) {
+//   res.render("admin/about.ejs")
+// });
 
 // Trainer Profile section START.....................................................................................
-router.get("/trainers", async function (req, res) {
+router.get("/trainers", isLogginIn, async function (req, res) {
 
   var trainers = await exe("SELECT * FROM trainers");
   var bookings = await exe("SELECT * FROM trainer_bookings ORDER BY id DESC");
@@ -199,7 +199,7 @@ router.get("/delete_booking/:id", async (req, res) => {
 
 
 // Membership plan section START...............................................................................
-router.get("/memberships", async (req, res) => {
+router.get("/memberships", isLogginIn, async (req, res) => {
   var data = await exe("SELECT * FROM membership_plans");
   res.render("admin/membership", { data });
 
@@ -287,7 +287,7 @@ router.post("/update-membership/:id", async (req, res) => {
 
 
 // ================= ADMIN GALLERY PAGE =================
-router.get("/gallery", async (req, res) => {
+router.get("/gallery", isLogginIn, async (req, res) => {
   const rows = await exe("SELECT * FROM gallery");
   res.render("admin/gallery.ejs", { gallery: rows });
 });
@@ -320,7 +320,7 @@ router.get("/delete_gallery/:id", async (req, res) => {
 
 // ================= ADMIN CONTACT PAGE =================
 // Show Contact Enquiries + Gym Info
-router.get("/contact", async (req, res) => {
+router.get("/contact", isLogginIn, async (req, res) => {
   try {
     var contacts = await exe("SELECT * FROM contact_messages ORDER BY id DESC");
     var gymData = await exe("SELECT * FROM gym_info LIMIT 1");
